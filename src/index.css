@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 262 70% 58%;
+    --primary-light: 262 70% 65%;
+    --primary-dark: 262 70% 45%;
+    --secondary: 217 91% 60%;
+    --accent: 263 62% 74%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --error: 0 91% 71%;
+    --background: 220 20% 97%;
+    --foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 40%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition-colors duration-200 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary border border-primary py-2 px-4 rounded-md hover:bg-muted transition-colors duration-200 font-medium;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent text-foreground border border-border py-2 px-4 rounded-md hover:bg-muted transition-colors duration-200 font-medium;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card {
+    @apply bg-card rounded-xl shadow-sm border border-border p-6;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white;
+  }
+  
+  .text-editor {
+    @apply w-full min-h-[200px] p-4 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white;
+  }
+}
